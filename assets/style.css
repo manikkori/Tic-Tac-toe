@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #232526, #414345);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  overflow: hidden;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2.8rem;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-template-rows: repeat(3, 110px);
+  gap: 12px;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+.cell:active {
+  transform: scale(0.95);
+}
+
+.cell.winner {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  box-shadow: 0 0 30px #00f5ff;
+  font-weight: bold;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff;
+  }
+  to {
+    box-shadow: 0 0 20px #00f5ff, 0 0 40px #00f5ff;
+  }
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  background-color: #00b894;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #00cec9;
+  transform: scale(1.05);
+}
+
+@media (max-width: 400px) {
+  .board {
+    grid-template-columns: repeat(3, 85px);
+    grid-template-rows: repeat(3, 85px);
+  }
+  .cell {
+    font-size: 2.2rem;
+  }
+}
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid #ffffff33;
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.cell:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03); /* subtle scale */
+}
+
